@@ -22,7 +22,6 @@ const TodosPannel = () => {
     const requestTodos = async () => {
       const response = await axios.get(`${import.meta.env.VITE_API_URL}/todos`);
       setTodos(response.data);
-      // console.log(response.data);
     };
 
     requestTodos();
