@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 const MainLayout = styled.div`
-    max-width: 1200px;
+    max-width: 800px;
+    min-width: 500px;
+    padding: 30px 50px;
     margin-left: auto;
     margin-right: auto;
     display: flex;

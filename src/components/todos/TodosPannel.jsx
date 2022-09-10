@@ -4,7 +4,12 @@ import axios from "axios";
 
 import { Pagination, TodosTable, TodoForm } from "./";
 import { Modal, Button } from "../ui";
+import styled from "styled-components";
 
+const Container = styled.div`
+  height: 500px;
+  
+`
 const TodosPannel = ({ updateMetrics }) => {
   const [todos, setTodos] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +33,7 @@ const TodosPannel = ({ updateMetrics }) => {
   }, []);
 
   return (
-    <>
+    <Container>
       {isOpen && (
         <Modal
           closeModal={closeModal}
@@ -38,7 +43,7 @@ const TodosPannel = ({ updateMetrics }) => {
       <Button onClick={openModal}>+ New To Do</Button>
       <TodosTable todos={todos} openModal={openModal} setTodoToEdit={setTodoToEdit} updateMetrics={updateMetrics}/>
       <Pagination />
-    </>
+    </Container>
   );
 };
 

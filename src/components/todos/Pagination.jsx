@@ -1,3 +1,16 @@
+import styled from "styled-components";
+
+const Container = styled.div`
+  margin-top: 200px;
+  display: "flex";
+  flex-direction: row;
+  justify-content: space-around;
+  max-width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+`;
+
 const Pagination = ({
   leftPage,
   centerPage,
@@ -7,23 +20,13 @@ const Pagination = ({
   isEnd,
 }) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        backgroundColor: "red",
-        justifyContent: "space-around",
-        maxWidth: "100px",
-        marginLeft: "auto",
-        marginRight: "auto"
-      }}
-    >
+    <Container>
       <a href="">&laquo;</a>
       <a href="">{leftPage}</a>
       <a href="">{centerPage}</a>
       <a href="">{rightPage}</a>
       <a href="">&raquo;</a>
-    </div>
+    </Container>
   );
 };
 

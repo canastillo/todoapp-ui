@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import styled from "styled-components";
+
+const Actions = styled.td`
+  display: flex;
+  justify-content: center;
+  padding-right: 10px;
+`
 
 const TodoRow = ({ todo, openModal, setTodoToEdit, updateMetrics }) => {
   const [isDone, setIsDone] = useState(todo.done);
@@ -35,10 +42,10 @@ const TodoRow = ({ todo, openModal, setTodoToEdit, updateMetrics }) => {
       <td>{todo.name}</td>
       <td>{todo.priority.charAt(0) + todo.priority.slice(1).toLowerCase()}</td>
       <td>{todo.dueDate || "-"}</td>
-      <td>
+      <Actions>
         <button onClick={editHandler}>Edit</button>
         <button>Delete</button>
-      </td>
+      </Actions>
     </tr>
   );
 };
