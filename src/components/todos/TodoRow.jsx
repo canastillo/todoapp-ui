@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const TodoRow = ({ todo, openModal, setTodoToEdit }) => {
+const TodoRow = ({ todo, openModal, setTodoToEdit, updateMetrics }) => {
   const [isDone, setIsDone] = useState(todo.done);
 
   const toggleState = async () => {
@@ -12,6 +12,8 @@ const TodoRow = ({ todo, openModal, setTodoToEdit }) => {
     );
 
     setIsDone(response.data.done);
+    // newTodoHandler();
+    updateMetrics();
   };
 
   const editHandler = () => {

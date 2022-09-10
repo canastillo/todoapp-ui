@@ -1,6 +1,6 @@
 import { TodoRow } from ".";
 
-const TodosTable = ({ todos, openModal, setTodoToEdit }) => {
+const TodosTable = ({ todos, openModal, setTodoToEdit, updateMetrics }) => {
   return (
     <table>
       <thead>
@@ -19,6 +19,7 @@ const TodosTable = ({ todos, openModal, setTodoToEdit }) => {
             todo={todo}
             openModal={openModal}
             setTodoToEdit={setTodoToEdit}
+            updateMetrics={updateMetrics}
           />
         ))}
       </tbody>

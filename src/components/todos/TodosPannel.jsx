@@ -5,7 +5,7 @@ import axios from "axios";
 import { Pagination, TodosTable, TodoForm } from "./";
 import { Modal, Button } from "../ui";
 
-const TodosPannel = () => {
+const TodosPannel = ({ updateMetrics }) => {
   const [todos, setTodos] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [todoToEdit, setTodoToEdit] = useState(null);
@@ -36,7 +36,7 @@ const TodosPannel = () => {
         />
       )}
       <Button onClick={openModal}>+ New To Do</Button>
-      <TodosTable todos={todos} openModal={openModal} setTodoToEdit={setTodoToEdit}/>
+      <TodosTable todos={todos} openModal={openModal} setTodoToEdit={setTodoToEdit} updateMetrics={updateMetrics}/>
       <Pagination />
     </>
   );
