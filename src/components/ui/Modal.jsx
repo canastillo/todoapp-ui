@@ -16,7 +16,6 @@ const Container = styled.div`
   top: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  overflow-y: scroll;
 `;
 
 const Modal = ({ content, closeModal }) => {

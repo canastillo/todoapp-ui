@@ -8,18 +8,21 @@ import styled from "styled-components";
 
 const Container = styled.div`
   height: 500px;
-  
-`
+`;
+
 const TodosPannel = ({ updateMetrics }) => {
   const [todos, setTodos] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [todoToEdit, setTodoToEdit] = useState(null);
 
   const openModal = () => {
+    document.body.style.overflow = "hidden";
     setIsOpen(true);
   };
 
   const closeModal = () => {
+    setTodoToEdit(null);
+    document.body.style.overflow = "";
     setIsOpen(false);
   };
 
@@ -37,11 +40,16 @@ const TodosPannel = ({ updateMetrics }) => {
       {isOpen && (
         <Modal
           closeModal={closeModal}
-          content={<TodoForm todo={todoToEdit} />}
+          content={<TodoForm todo={todoToEdit} setTodos={setTodos}/>}
         />
       )}
       <Button onClick={openModal}>+ New To Do</Button>
-      <TodosTable todos={todos} openModal={openModal} setTodoToEdit={setTodoToEdit} updateMetrics={updateMetrics}/>
+      <TodosTable
+        todos={todos}
+        openModal={openModal}
+        setTodoToEdit={setTodoToEdit}
+        updateMetrics={updateMetrics}
+      />
       <Pagination />
     </Container>
   );
